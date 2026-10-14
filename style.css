@@ -1,0 +1,276 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    padding: 25px 15px;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #2563eb;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #64748b;
+}
+
+button {
+    padding: 11px 15px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card,
+.section {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #0000000d;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 23px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.section h2 {
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+.budget-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+form label {
+    align-self: end;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+form input,
+form select {
+    min-width: 0;
+}
+
+form button {
+    width: 100%;
+}
+
+.secondary-button {
+    background: #64748b;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+#budgetMessage {
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.progress-background {
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#budgetProgress {
+    height: 100%;
+    width: 0;
+    background: #16a34a;
+    transition: width 0.3s;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#exportButton {
+    margin-bottom: 15px;
+}
+
+#transactionList {
+    list-style: none;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.transaction h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    overflow-wrap: anywhere;
+}
+
+.transaction p {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.transaction-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.transaction-amount {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.income-text {
+    color: #16a34a;
+}
+
+.expense-text {
+    color: #dc2626;
+}
+
+.edit-button {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.delete-button {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+#emptyMessage {
+    text-align: center;
+    color: #64748b;
+    padding: 15px;
+}
+
+body.dark {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+body.dark .card,
+body.dark .section {
+    background: #1e293b;
+    box-shadow: none;
+}
+
+body.dark input,
+body.dark select {
+    background: #334155;
+    color: white;
+    border-color: #475569;
+}
+
+body.dark header p,
+body.dark .transaction p {
+    color: #cbd5e1;
+}
+
+body.dark .transaction {
+    border-bottom-color: #475569;
+}
+
+@media (max-width: 650px) {
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        align-items: flex-start;
+    }
+
+    form,
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .budget-form {
+        flex-direction: column;
+    }
+
+    .section,
+    .card {
+        padding: 17px;
+    }
+
+    .transaction {
+        align-items: flex-start;
+    }
+
+    .transaction-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+}
